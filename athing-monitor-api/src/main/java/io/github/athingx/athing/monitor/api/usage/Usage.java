@@ -2,6 +2,9 @@ package io.github.athingx.athing.monitor.api.usage;
 
 import io.github.athingx.athing.dm.api.Identifier;
 
+/**
+ * 设备使用
+ */
 public class Usage {
 
     /**

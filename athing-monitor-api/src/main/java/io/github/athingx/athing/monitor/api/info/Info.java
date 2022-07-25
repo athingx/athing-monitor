@@ -4,7 +4,7 @@ package io.github.athingx.athing.monitor.api.info;
 import io.github.athingx.athing.dm.api.Identifier;
 
 /**
- * 计算机信息
+ * 设备信息
  */
 public class Info {
 
