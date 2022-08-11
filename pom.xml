@@ -8,6 +8,16 @@
     <version>${revision}</version>
     <name>${project.artifactId}</name>
     <url>https://github.com/oldmanpushcart/athing-monitor</url>
+    <developers>
+        <developer>
+            <id>oldmanpushcart</id>
+            <organization>athingx</organization>
+            <organizationUrl>https://github.com/athingx</organizationUrl>
+            <name>oldmanpushcart</name>
+            <email>oldmanpushcart@gmail.com</email>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,5 +103,19 @@
         <module>athing-monitor-api</module>
         <module>athing-monitor-thing</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/athingx/athing-monitor</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/athingx/athing</url>
+        </repository>
+    </repositories>
 
 </project>
