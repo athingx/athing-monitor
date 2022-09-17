@@ -1,4 +1,4 @@
-package io.github.athingx.athing.monitor.thing.impl.util;
+package io.github.athingx.athing.monitor.thing.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

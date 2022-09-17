@@ -1,8 +1,8 @@
 package io.github.athingx.athing.monitor.thing.test;
 
 import io.github.athingx.athing.dm.thing.dump.DumpToFn;
-import io.github.athingx.athing.monitor.api.info.ThingInfoComp;
-import io.github.athingx.athing.monitor.api.usage.ThingUsageComp;
+import io.github.athingx.athing.monitor.api.info.ThingInfoDmComp;
+import io.github.athingx.athing.monitor.api.usage.ThingUsageDmComp;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ public class ThingMonitorTestCase extends ThingMonitorSupport {
 
     @Test
     public void test$thing$monitor$info() {
-        final var infoComp = thingDm.comp(ThingInfoComp.COMP_ID, ThingInfoComp.class);
+        final var infoComp = thingDm.comp(ThingInfoDmComp.COMP_ID, ThingInfoDmComp.class);
         Assert.assertNotNull(infoComp.getBaseboard());
         Assert.assertNotNull(infoComp.getComputer());
         Assert.assertNotNull(infoComp.getCpu());
@@ -36,7 +36,7 @@ public class ThingMonitorTestCase extends ThingMonitorSupport {
 
     @Test
     public void test$thing$monitor$usage() {
-        final var usageComp = thingDm.comp(ThingUsageComp.COMP_ID, ThingUsageComp.class);
+        final var usageComp = thingDm.comp(ThingUsageDmComp.COMP_ID, ThingUsageDmComp.class);
         Assert.assertNotNull(usageComp.getCpu());
         Assert.assertNotNull(usageComp.getNetworks());
         Assert.assertNotNull(usageComp.getStores());

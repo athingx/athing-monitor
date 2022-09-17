@@ -102,7 +102,7 @@ public class Usage {
         private final Identifier identifier;
 
         Item(String propertyId) {
-            this.identifier = Identifier.toIdentifier(ThingUsageComp.COMP_ID, propertyId);
+            this.identifier = Identifier.toIdentifier(ThingUsageDmComp.COMP_ID, propertyId);
         }
 
         public Identifier getIdentifier() {

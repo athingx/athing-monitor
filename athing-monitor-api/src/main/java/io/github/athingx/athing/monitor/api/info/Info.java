@@ -161,7 +161,7 @@ public class Info {
         private final Identifier identifier;
 
         Item(String propertyId) {
-            this.identifier = Identifier.toIdentifier(ThingInfoComp.COMP_ID, propertyId);
+            this.identifier = Identifier.toIdentifier(ThingInfoDmComp.COMP_ID, propertyId);
         }
 
         public Identifier getIdentifier() {

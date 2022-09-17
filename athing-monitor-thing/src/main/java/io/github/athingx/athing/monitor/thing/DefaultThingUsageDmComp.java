@@ -1,9 +1,9 @@
-package io.github.athingx.athing.monitor.thing.impl;
+package io.github.athingx.athing.monitor.thing;
 
 
-import io.github.athingx.athing.monitor.api.usage.ThingUsageComp;
+import io.github.athingx.athing.monitor.api.usage.ThingUsageDmComp;
 import io.github.athingx.athing.monitor.api.usage.Usage;
-import io.github.athingx.athing.monitor.thing.impl.util.MathUtils;
+import io.github.athingx.athing.monitor.thing.util.MathUtils;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.CentralProcessor.TickType;
@@ -14,7 +14,7 @@ import oshi.software.os.OperatingSystem;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class ThingUsageCompImpl implements ThingUsageComp {
+public class DefaultThingUsageDmComp implements ThingUsageDmComp {
 
     private final SystemInfo info = new SystemInfo();
     private final OperatingSystem os = info.getOperatingSystem();

@@ -1,15 +1,15 @@
-package io.github.athingx.athing.monitor.thing.impl;
+package io.github.athingx.athing.monitor.thing;
 
 
 import io.github.athingx.athing.monitor.api.info.Info;
-import io.github.athingx.athing.monitor.api.info.ThingInfoComp;
+import io.github.athingx.athing.monitor.api.info.ThingInfoDmComp;
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.OperatingSystem;
 
 import java.util.Arrays;
 
-public class ThingInfoCompImpl implements ThingInfoComp {
+public class DefaultThingInfoDmComp implements ThingInfoDmComp {
 
     private final SystemInfo info = new SystemInfo();
     private final OperatingSystem os = info.getOperatingSystem();

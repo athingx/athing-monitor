@@ -2,8 +2,8 @@ package io.github.athingx.athing.monitor.thing.test;
 
 import io.github.athingx.athing.dm.thing.ThingDm;
 import io.github.athingx.athing.dm.thing.builder.ThingDmBuilder;
-import io.github.athingx.athing.monitor.thing.ThingMonitor;
-import io.github.athingx.athing.monitor.thing.builder.ThingMonitorBuilder;
+import io.github.athingx.athing.monitor.thing.DefaultThingInfoDmComp;
+import io.github.athingx.athing.monitor.thing.DefaultThingUsageDmComp;
 import io.github.athingx.athing.thing.api.Thing;
 import io.github.athingx.athing.thing.api.ThingPath;
 import io.github.athingx.athing.thing.builder.ThingBuilder;
@@ -15,7 +15,6 @@ public class ThingMonitorSupport implements LoadingProperties {
 
     protected static volatile Thing thing;
     protected static volatile ThingDm thingDm;
-    protected static volatile ThingMonitor thingMonitor;
 
     @BeforeClass
     public static void _before() throws Exception {
@@ -28,10 +27,9 @@ public class ThingMonitorSupport implements LoadingProperties {
 
         thingDm = new ThingDmBuilder()
                 .build(thing)
-                .get();
-
-        thingMonitor = new ThingMonitorBuilder()
-                .build(thingDm);
+                .get()
+                .load(new DefaultThingInfoDmComp())
+                .load(new DefaultThingUsageDmComp());
 
     }
 

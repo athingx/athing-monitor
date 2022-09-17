@@ -7,8 +7,8 @@ import io.github.athingx.athing.dm.api.annotation.ThDmProperty;
 /**
  * 设备使用率组件
  */
-@ThDmComp(id = ThingUsageComp.COMP_ID, name = "thing usage monitor", desc = "usage of thing")
-public interface ThingUsageComp extends ThingDmComp {
+@ThDmComp(id = ThingUsageDmComp.COMP_ID, name = "thing usage monitor", desc = "usage of thing")
+public interface ThingUsageDmComp extends ThingDmComp {
 
     String COMP_ID = "athing_monitor_usage";
 
