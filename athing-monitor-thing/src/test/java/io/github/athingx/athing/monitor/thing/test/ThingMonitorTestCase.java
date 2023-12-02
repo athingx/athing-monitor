@@ -1,6 +1,6 @@
 package io.github.athingx.athing.monitor.thing.test;
 
-import io.github.athingx.athing.dm.thing.dump.DumpToFn;
+import io.github.athingx.athing.dm.thing.dump.DumpTo;
 import io.github.athingx.athing.monitor.api.info.ThingInfoDmComp;
 import io.github.athingx.athing.monitor.api.usage.ThingUsageDmComp;
 import org.junit.Assert;
@@ -10,12 +10,12 @@ public class ThingMonitorTestCase extends ThingMonitorSupport {
 
     @Test
     public void test$thing$monitor$dump() throws Exception {
-        thingDm.dump().dumpTo(new DumpToFn.ToMap(map ->
-                map.forEach((compId, json) ->
+        thingDm.dumpTo(DumpTo.toMap())
+                .forEach((compId, json) ->
                         System.out.printf("""
                                 COMP: %s
                                 JSON: %s%n
-                                """, compId, json))));
+                                """, compId, json));
     }
 
     @Test

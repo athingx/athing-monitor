@@ -1,13 +1,12 @@
 package io.github.athingx.athing.monitor.thing.test;
 
 import io.github.athingx.athing.dm.thing.ThingDm;
-import io.github.athingx.athing.dm.thing.builder.ThingDmBuilder;
-import io.github.athingx.athing.monitor.thing.DefaultThingInfoDmComp;
-import io.github.athingx.athing.monitor.thing.DefaultThingUsageDmComp;
+import io.github.athingx.athing.dm.thing.ThingDmInstaller;
+import io.github.athingx.athing.monitor.thing.ThingMonitorInstaller;
 import io.github.athingx.athing.thing.api.Thing;
 import io.github.athingx.athing.thing.api.ThingPath;
 import io.github.athingx.athing.thing.builder.ThingBuilder;
-import io.github.athingx.athing.thing.builder.mqtt.AliyunMqttClientFactory;
+import io.github.athingx.athing.thing.builder.client.DefaultMqttClientFactory;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
@@ -20,16 +19,14 @@ public class ThingMonitorSupport implements LoadingProperties {
     public static void _before() throws Exception {
 
         thing = new ThingBuilder(new ThingPath(PRODUCT_ID, THING_ID))
-                .clientFactory(new AliyunMqttClientFactory()
+                .client(new DefaultMqttClientFactory()
                         .remote(THING_REMOTE)
-                        .secret(THING_SECRET))
+                        .secret(THING_SECRET)
+                )
                 .build();
 
-        thingDm = new ThingDmBuilder()
-                .build(thing)
-                .get()
-                .load(new DefaultThingInfoDmComp())
-                .load(new DefaultThingUsageDmComp());
+        thing.plugins().install(new ThingMonitorInstaller());
+        thingDm = thing.plugins().install(new ThingDmInstaller()).get();
 
     }
 
